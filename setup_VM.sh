@@ -2,7 +2,11 @@
 #if not cloned already, use:
 #git clone https://github.com/yuvalgrossman/datahack_yyr
 
-sudo apt-get update
+# install python 3.7: 
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.7
 
 # install pip: 
 sudo apt-get install python3-pip
@@ -18,6 +22,10 @@ source venv/bin/activate
 
 #install requirements
 pip install -r requirements.txt
+
+# install modin from github, due to a problem with current release: 
+pip uninstall modin
+pip install git+https://github.com/modin-project/modin
 
 #configure jupyter: 
 #jupyter notebook --generate-config
